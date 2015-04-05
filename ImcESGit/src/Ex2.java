@@ -47,7 +47,7 @@ public class Ex2 extends JFrame {
 
     //criação do FlowLayout que alinha componentes da esquerda para a direita.
     private FlowLayout flowLayout = new FlowLayout();
-    /*criação de GridLayout com 4 linhas e 2 colunas com 10 de espaço em largura 49 e 1 de altura*/
+    /*criação de GridLayout com 4 linhas e 2 colunas com 10 de espaço em largura e 1 de altura*/
     private GridLayout gridLayout = new GridLayout(4, 2, 10, 1);
     //criação de um painel
     private JPanel gridJPanel = new JPanel();
@@ -104,13 +104,12 @@ public class Ex2 extends JFrame {
         super.add(Lfoto);
         super.add(Lresultado);
 
-        //criação de uma classe interna anônima para butao
+        //criação de uma classe interna anônima para botão
         butao.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent event) {
                         switch (escolha.getSelectedIndex()) {
-                            /*caso seja a primeira opção que foi selecionada na caixa de seleção
-                             118             configure tipo=0 e vá para o método Calculos*/
+                            /*caso seja a primeira opção que foi selecionada na caixa de seleção configure tipo=0 e vá para o método Calculos*/
                             case 0: {
                                 tipo = 0; //mulher
                                 Calculos();
@@ -150,31 +149,30 @@ public class Ex2 extends JFrame {
             peso = Double.parseDouble(Fpeso.getText());
             //realiza calculos
             massa = peso / (altura * altura);
-            /*Se a massa corporal for menor do que o estabelecido pelo vetor configure a variável
-             164            string com essa frase*/
+            /*Se a massa corporal for menor do que o estabelecido pelo vetor configure a variável string com essa frase*/
             if (tipo == 0) {
                 if (imc_mulheres[0] > massa) {
-                    string = String.format("CUIDADO!!!Voce estar abaixo do peso! IMC %.2f", massa);
+                    string = String.format("Você está abaixo do peso. IMC %.2f", massa);
                     foto = 0;
                 } else if ((imc_mulheres[0] < massa) && (massa <= imc_mulheres[1])) {
-                    string = String.format("PARABENS!!Voce estar com o peso ideal! IMC %.2f", massa);
+                    string = String.format("Você está com o peso ideal. IMC %.2f", massa);
                     foto = 1;
                 } else {
-                    string = String.format("CUIDADO!!Voce estar obesa! IMC %.2f", massa);
+                    string = String.format("Você está obesa. IMC %.2f", massa);
                     foto = 2;
                 }
                 //configure a foto conforme a posição da variável foto
                 Lfoto.setIcon(imagemM[foto]);
             } else if (tipo == 1) {
                 if (imc_homens[0] > massa) {
-                    string = String.format("CUIDADO!!!Voce estar abaixo do peso! IMC %.2f", massa);
+                    string = String.format("Você está abaixo do peso. IMC %.2f", massa);
                     //configura a posição que será exibido a imagem
                     foto = 0;
                 } else if ((imc_homens[0] < massa) && (massa < imc_homens[1])) {
-                    string = String.format("PARABENS!!Voce estar com o peso ideal! IMC %.2f", massa);
+                    string = String.format("Você está com o peso ideal. IMC %.2f", massa);
                     foto = 1;
                 } else {
-                    string = String.format("CUIDADO!!Voce estar obeso! IMC %.2f", massa);
+                    string = String.format("Você está obeso. IMC %.2f", massa);
                     foto = 2;
                 }
                 //configure a foto conforme a posição da variável foto
@@ -186,7 +184,7 @@ public class Ex2 extends JFrame {
             Lresultado.setText(string);
         } //caso ocorra uma excessão(erro) exiba uma mensagem nua caixa de mensagem
         catch (NumberFormatException exception) {
-            JOptionPane.showMessageDialog(this, "No número inválido!\nEx: Use '.' ao invés de ',' para separar as casas decimais.", "ERROR FATAL!!!", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Número inválido!\nEx: Use '.' ao invés de ',' para separar as casas decimais.", "Atenção!", JOptionPane.ERROR_MESSAGE);
             //limpe s campos e variáveis
             Fpeso.setText("");
             Faltura.setText("");
