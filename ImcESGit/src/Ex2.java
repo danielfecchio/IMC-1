@@ -35,7 +35,7 @@ public class Ex2 extends JFrame {
     //declaração das variáveis
     //Vetor de caracteres (String) de 2 colunas
 
-    private String sexo[] = {"Mulher", "Homem"};
+    private String sexo[] = {"Feminino", "Masculino"};
     //inteiros (int)
     int tipo, foto;
     //numeros de pontos flutuantes (double)
