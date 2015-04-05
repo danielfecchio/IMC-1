@@ -1,4 +1,3 @@
-
 /**
  *
  * @author rmoris
@@ -23,16 +22,12 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 //painel
 import javax.swing.JPanel;
-//caixa de textos
-import javax.swing.JTextArea;
 //campo para inserção de valores ou caracteres
 import javax.swing.JTextField;
 //Evento para de ouvir um evento do botão
 import java.awt.event.ActionListener;
 //Evento de executar uma ação do evento que foi ouvido(ativado)
 import java.awt.event.ActionEvent;
-//Tratador de erros
-import java.util.InputMismatchException;
 
 //Criação da classe EX2 extendendo a classe JFrame que foi importada
 public class Ex2 extends JFrame {

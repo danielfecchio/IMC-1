@@ -2,8 +2,6 @@
  *
  * @author rmoris
  */
- //JFrame classe responsável por exibir a janela
- import javax.swing.JFrame;
 
  //Main - Nome da classe
  public class Main
