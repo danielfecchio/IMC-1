@@ -148,7 +148,9 @@ public class Ex2 extends JFrame {
             //da mesma forma com Fpeso para a variável peso
             peso = Double.parseDouble(Fpeso.getText());
             //realiza calculos
-            massa = peso / (altura * altura);
+            massa = Math.round((peso / (altura * altura)) * 100);
+            massa = massa / 100;
+            
             /*Se a massa corporal for menor do que o estabelecido pelo vetor configure a variável string com essa frase*/
             if (tipo == 0) {
                 if (imc_mulheres[0] > massa) {
@@ -202,5 +204,41 @@ public class Ex2 extends JFrame {
         //substitua a imagem atual por essa
         Lfoto.setIcon(limpar);
         setSize(300, 160);
+    }
+    
+    public void calculosPublico() {
+        this.Calculos();
+    }
+    
+    public double getMassa() {
+        return this.massa;
+    }
+    
+    public void limparPublico() {
+        this.limpar();
+    }
+    
+    public String getFpeso() {
+        return this.Fpeso.getText();
+    }
+    
+    public String getFaltura() {
+        return this.Faltura.getText();
+    }
+    
+    public String getLresultado() {
+        return this.Lresultado.getText();
+    }
+    
+    public void setFpeso(String Fpeso) {
+        this.Fpeso.setText(Fpeso);
+    }
+    
+    public void setFaltura(String Faltura) {
+        this.Faltura.setText(Faltura);
+    }
+    
+    public void setLresultado(String Lresultado) {
+        this.Lresultado.setText(Lresultado);
     }
 }//Fim da classe Ex2
